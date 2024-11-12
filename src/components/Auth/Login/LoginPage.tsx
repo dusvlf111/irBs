@@ -36,7 +36,9 @@ const LoginPage: React.FC = () => {
     loginData.append('s_cookie', '');
 
     try {
-      const response = await axios.post('https://bus.inje.ac.kr/login_proc.php', loginData);
+      const response = await axios.post('/login_proc.php', loginData, {
+
+      });
       if (response.status === 200) {
         console.log(response.data);
         if (response.data.status === 'success') {
